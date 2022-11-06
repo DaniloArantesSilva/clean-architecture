@@ -1,8 +1,8 @@
 package com.arantes.cleanarch.config;
 
-import com.arantes.cleanarch.core.usecase.DeleteCustomerByIdUseCase;
-import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCase;
-import com.arantes.cleanarch.dataprovider.adapters.DeleteCustomerByIdAdapter;
+import com.arantes.cleanarch.core.usecase.DeleteCustomerByIdUseCaseImpl;
+import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCaseImpl;
+import com.arantes.cleanarch.dataprovider.DeleteCustomerByIdImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 public class DeleteCustomerByIdConfig {
 
     @Bean
-    public DeleteCustomerByIdUseCase deleteCustomerByIdUseCase(
-            FindCustomerByIdUseCase findCustomerByIdUseCase,
-            DeleteCustomerByIdAdapter deleteCustomerByIdAdapter
+    public DeleteCustomerByIdUseCaseImpl deleteCustomerByIdUseCase(
+            FindCustomerByIdUseCaseImpl findCustomerByIdUseCaseImpl,
+            DeleteCustomerByIdImpl deleteCustomerByIdImpl
     ) {
-        return new DeleteCustomerByIdUseCase(findCustomerByIdUseCase, deleteCustomerByIdAdapter);
+        return new DeleteCustomerByIdUseCaseImpl(findCustomerByIdUseCaseImpl, deleteCustomerByIdImpl);
     }
 
 }

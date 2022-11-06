@@ -1,12 +1,12 @@
-package com.arantes.cleanarch.dataprovider.adapters;
+package com.arantes.cleanarch.dataprovider;
 
-import com.arantes.cleanarch.core.ports.out.SendCpfForValidationOutputPort;
+import com.arantes.cleanarch.core.dataprovider.SendCpfForValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SendCpfForValidationAdapter implements SendCpfForValidationOutputPort {
+public class SendCpfForValidationImpl implements SendCpfForValidation {
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;

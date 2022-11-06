@@ -1,8 +1,8 @@
-package com.arantes.cleanarch.core.ports.out;
+package com.arantes.cleanarch.core.dataprovider;
 
 import com.arantes.cleanarch.core.domain.Customer;
 
-public interface UpdateCustomerOutputPort {
+public interface UpdateCustomer {
 
     void update(Customer customer);
 

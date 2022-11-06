@@ -1,10 +1,10 @@
 package com.arantes.cleanarch.entrypoint.controller;
 
 import com.arantes.cleanarch.core.domain.Customer;
-import com.arantes.cleanarch.core.ports.in.DeleteCustomerByIdInputPort;
-import com.arantes.cleanarch.core.ports.in.FindCustomerByIdInputPort;
-import com.arantes.cleanarch.core.ports.in.InsertCustomerInputPort;
-import com.arantes.cleanarch.core.ports.in.UpdateCustomerInputPort;
+import com.arantes.cleanarch.core.usecase.DeleteCustomerByIdUseCase;
+import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCase;
+import com.arantes.cleanarch.core.usecase.InsertCustomerUseCase;
+import com.arantes.cleanarch.core.usecase.UpdateCustomerUseCase;
 import com.arantes.cleanarch.entrypoint.controller.mapper.CustomerMapper;
 import com.arantes.cleanarch.entrypoint.controller.request.CustomerRequest;
 import com.arantes.cleanarch.entrypoint.controller.response.CustomerResponse;
@@ -26,16 +26,16 @@ import javax.validation.Valid;
 public class CustomerController {
 
     @Autowired
-    private InsertCustomerInputPort insertCustomerInputPort;
+    private InsertCustomerUseCase insertCustomerUseCase;
 
     @Autowired
-    private FindCustomerByIdInputPort findCustomerByIdInputPort;
+    private FindCustomerByIdUseCase findCustomerByIdUseCase;
 
     @Autowired
-    private UpdateCustomerInputPort updateCustomerInputPort;
+    private UpdateCustomerUseCase updateCustomerUseCase;
 
     @Autowired
-    private DeleteCustomerByIdInputPort deleteCustomerByIdInputPort;
+    private DeleteCustomerByIdUseCase deleteCustomerByIdUseCase;
 
     @Autowired
     private CustomerMapper customerMapper;
@@ -43,13 +43,13 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<String> insert(@Valid @RequestBody CustomerRequest customerRequest) {
         var customer = customerMapper.toCustomer(customerRequest);
-        insertCustomerInputPort.insert(customer, customerRequest.getZipCode());
+        insertCustomerUseCase.insert(customer, customerRequest.getZipCode());
         return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<CustomerResponse> findById(@PathVariable final String id) {
-        var customer = findCustomerByIdInputPort.find(id);
+        var customer = findCustomerByIdUseCase.find(id);
         var customerResponse = customerMapper.toCustomerResponse(customer);
         return ResponseEntity.ok().body(customerResponse);
     }
@@ -58,13 +58,13 @@ public class CustomerController {
     public ResponseEntity<Void> update(@PathVariable final String id, @Valid @RequestBody CustomerRequest customerRequest) {
         Customer customer = customerMapper.toCustomer(customerRequest);
         customer.setId(id);
-        updateCustomerInputPort.update(customer, customerRequest.getZipCode());
+        updateCustomerUseCase.update(customer, customerRequest.getZipCode());
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable final String id) {
-        deleteCustomerByIdInputPort.delete(id);
+        deleteCustomerByIdUseCase.delete(id);
         return ResponseEntity.noContent().build();
     }
 

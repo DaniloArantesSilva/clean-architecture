@@ -1,12 +1,12 @@
-package com.arantes.cleanarch.dataprovider.adapters;
+package com.arantes.cleanarch.dataprovider;
 
-import com.arantes.cleanarch.core.ports.out.DeleteCustomerByIdOutputPort;
+import com.arantes.cleanarch.core.dataprovider.DeleteCustomerById;
 import com.arantes.cleanarch.dataprovider.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeleteCustomerByIdAdapter implements DeleteCustomerByIdOutputPort {
+public class DeleteCustomerByIdImpl implements DeleteCustomerById {
 
     @Autowired
     private CustomerRepository customerRepository;

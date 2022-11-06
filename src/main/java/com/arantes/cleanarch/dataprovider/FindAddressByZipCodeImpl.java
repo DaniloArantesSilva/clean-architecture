@@ -1,14 +1,14 @@
-package com.arantes.cleanarch.dataprovider.adapters;
+package com.arantes.cleanarch.dataprovider;
 
 import com.arantes.cleanarch.core.domain.Address;
-import com.arantes.cleanarch.core.ports.out.FindAddressByZipCodeOutputPort;
+import com.arantes.cleanarch.core.dataprovider.FindAddressByZipCode;
 import com.arantes.cleanarch.dataprovider.client.FindAddressByZipCodeClient;
 import com.arantes.cleanarch.dataprovider.client.mapper.AddressResponseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FindAddressByZipCodeAdapter implements FindAddressByZipCodeOutputPort {
+public class FindAddressByZipCodeImpl implements FindAddressByZipCode {
 
     @Autowired
     private FindAddressByZipCodeClient client;

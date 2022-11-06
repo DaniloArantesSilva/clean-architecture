@@ -1,6 +1,6 @@
 package com.arantes.cleanarch.entrypoint.consumer;
 
-import com.arantes.cleanarch.core.ports.in.UpdateCustomerInputPort;
+import com.arantes.cleanarch.core.usecase.UpdateCustomerUseCase;
 import com.arantes.cleanarch.entrypoint.consumer.mapper.CustomerMessageMapper;
 import com.arantes.cleanarch.entrypoint.consumer.message.CustomerMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class ReceiveValidatedCpfConsumer {
 
     @Autowired
-    private UpdateCustomerInputPort updateCustomerInputPort;
+    private UpdateCustomerUseCase updateCustomerUseCase;
 
     @Autowired
     private CustomerMessageMapper customerMessageMapper;
@@ -19,7 +19,7 @@ public class ReceiveValidatedCpfConsumer {
     @KafkaListener(topics = "tp-cpf-validated", groupId = "arantes")
     public void receive(CustomerMessage customerMessage) {
         var customer = customerMessageMapper.toCustomer(customerMessage);
-        updateCustomerInputPort.update(customer, customerMessage.getZipCode());
+        updateCustomerUseCase.update(customer, customerMessage.getZipCode());
     }
 
 }

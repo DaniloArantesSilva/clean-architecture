@@ -1,8 +1,8 @@
-package com.arantes.cleanarch.core.ports.out;
+package com.arantes.cleanarch.core.dataprovider;
 
 import com.arantes.cleanarch.core.domain.Address;
 
-public interface FindAddressByZipCodeOutputPort {
+public interface FindAddressByZipCode {
 
     Address find(final String zipCode);
 

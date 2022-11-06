@@ -1,7 +1,7 @@
-package com.arantes.cleanarch.dataprovider.adapters;
+package com.arantes.cleanarch.dataprovider;
 
 import com.arantes.cleanarch.core.domain.Customer;
-import com.arantes.cleanarch.core.ports.out.FindCustomerByIdOutputPort;
+import com.arantes.cleanarch.core.dataprovider.FindCustomerById;
 import com.arantes.cleanarch.dataprovider.repository.CustomerRepository;
 import com.arantes.cleanarch.dataprovider.repository.mapper.CustomerEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class FindCustomerByIdAdapter implements FindCustomerByIdOutputPort {
+public class FindCustomerByIdImpl implements FindCustomerById {
 
     @Autowired
     private CustomerEntityMapper customerEntityMapper;

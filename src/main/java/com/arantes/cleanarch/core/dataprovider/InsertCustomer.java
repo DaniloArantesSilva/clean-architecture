@@ -1,8 +1,8 @@
-package com.arantes.cleanarch.core.ports.out;
+package com.arantes.cleanarch.core.dataprovider;
 
 import com.arantes.cleanarch.core.domain.Customer;
 
-public interface InsertCustomerOutputPort {
+public interface InsertCustomer {
 
     void insert(Customer customer);
 

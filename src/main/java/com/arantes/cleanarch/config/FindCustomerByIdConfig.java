@@ -1,7 +1,7 @@
 package com.arantes.cleanarch.config;
 
-import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCase;
-import com.arantes.cleanarch.dataprovider.adapters.FindCustomerByIdAdapter;
+import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCaseImpl;
+import com.arantes.cleanarch.dataprovider.FindCustomerByIdImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 public class FindCustomerByIdConfig {
 
     @Bean
-    public FindCustomerByIdUseCase findCustomerByIdUseCase(
-            FindCustomerByIdAdapter findCustomerByIdAdapter
+    public FindCustomerByIdUseCaseImpl findCustomerByIdUseCase(
+            FindCustomerByIdImpl findCustomerByIdImpl
     ) {
-        return new FindCustomerByIdUseCase(findCustomerByIdAdapter);
+        return new FindCustomerByIdUseCaseImpl(findCustomerByIdImpl);
     }
 
 }

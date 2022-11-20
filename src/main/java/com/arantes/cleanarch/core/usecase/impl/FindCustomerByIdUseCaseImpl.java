@@ -1,7 +1,8 @@
-package com.arantes.cleanarch.core.usecase;
+package com.arantes.cleanarch.core.usecase.impl;
 
 import com.arantes.cleanarch.core.domain.Customer;
 import com.arantes.cleanarch.core.dataprovider.FindCustomerById;
+import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCase;
 
 public class FindCustomerByIdUseCaseImpl implements FindCustomerByIdUseCase {
 

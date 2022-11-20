@@ -1,6 +1,6 @@
 package com.arantes.cleanarch.config;
 
-import com.arantes.cleanarch.core.usecase.InsertCustomerUseCaseImpl;
+import com.arantes.cleanarch.core.usecase.impl.InsertCustomerUseCaseImpl;
 import com.arantes.cleanarch.dataprovider.FindAddressByZipCodeImpl;
 import com.arantes.cleanarch.dataprovider.InsertCustomerImpl;
 import com.arantes.cleanarch.dataprovider.SendCpfForValidationImpl;

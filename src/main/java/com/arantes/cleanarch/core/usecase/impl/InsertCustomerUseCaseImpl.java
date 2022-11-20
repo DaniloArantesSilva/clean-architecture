@@ -1,9 +1,10 @@
-package com.arantes.cleanarch.core.usecase;
+package com.arantes.cleanarch.core.usecase.impl;
 
 import com.arantes.cleanarch.core.domain.Customer;
 import com.arantes.cleanarch.core.dataprovider.FindAddressByZipCode;
 import com.arantes.cleanarch.core.dataprovider.InsertCustomer;
 import com.arantes.cleanarch.core.dataprovider.SendCpfForValidation;
+import com.arantes.cleanarch.core.usecase.InsertCustomerUseCase;
 
 public class InsertCustomerUseCaseImpl implements InsertCustomerUseCase {
 

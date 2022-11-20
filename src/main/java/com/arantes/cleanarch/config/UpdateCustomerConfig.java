@@ -1,7 +1,7 @@
 package com.arantes.cleanarch.config;
 
-import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCaseImpl;
-import com.arantes.cleanarch.core.usecase.UpdateCustomerUseCaseImpl;
+import com.arantes.cleanarch.core.usecase.impl.FindCustomerByIdUseCaseImpl;
+import com.arantes.cleanarch.core.usecase.impl.UpdateCustomerUseCaseImpl;
 import com.arantes.cleanarch.dataprovider.FindAddressByZipCodeImpl;
 import com.arantes.cleanarch.dataprovider.UpdateCustomerImpl;
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,8 @@
-package com.arantes.cleanarch.core.usecase;
+package com.arantes.cleanarch.core.usecase.impl;
 
 import com.arantes.cleanarch.core.dataprovider.DeleteCustomerById;
+import com.arantes.cleanarch.core.usecase.DeleteCustomerByIdUseCase;
+import com.arantes.cleanarch.core.usecase.FindCustomerByIdUseCase;
 
 public class DeleteCustomerByIdUseCaseImpl implements DeleteCustomerByIdUseCase {
 

@@ -8,19 +8,19 @@ import com.arantes.cleanarch.core.usecase.InsertCustomerUseCase;
 
 public class InsertCustomerUseCaseImpl implements InsertCustomerUseCase {
 
-    private final InsertCustomer insertCustomer;
-
     private final FindAddressByZipCode findAddressByZipCode;
+
+    private final InsertCustomer insertCustomer;
 
     private final SendCpfForValidation sendCpfForValidation;
 
     public InsertCustomerUseCaseImpl(
-            InsertCustomer insertCustomer,
             FindAddressByZipCode findAddressByZipCode,
+            InsertCustomer insertCustomer,
             SendCpfForValidation sendCpfForValidation
     ) {
-        this.insertCustomer = insertCustomer;
         this.findAddressByZipCode = findAddressByZipCode;
+        this.insertCustomer = insertCustomer;
         this.sendCpfForValidation = sendCpfForValidation;
     }
 

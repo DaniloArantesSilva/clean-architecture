@@ -19,7 +19,7 @@ public class DeleteCustomerByIdUseCaseImpl implements DeleteCustomerByIdUseCase 
     }
 
     @Override
-    public void delete(final String id) {
+    public void delete(String id) {
         findCustomerByIdUseCase.find(id);
         deleteCustomerById.delete(id);
     }

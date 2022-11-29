@@ -11,10 +11,10 @@ public class DeleteCustomerByIdConfig {
 
     @Bean
     public DeleteCustomerByIdUseCaseImpl deleteCustomerByIdUseCase(
-            FindCustomerByIdUseCaseImpl findCustomerByIdUseCaseImpl,
-            DeleteCustomerByIdImpl deleteCustomerByIdImpl
+            FindCustomerByIdUseCaseImpl findCustomerByIdUseCase,
+            DeleteCustomerByIdImpl deleteCustomerById
     ) {
-        return new DeleteCustomerByIdUseCaseImpl(findCustomerByIdUseCaseImpl, deleteCustomerByIdImpl);
+        return new DeleteCustomerByIdUseCaseImpl(findCustomerByIdUseCase, deleteCustomerById);
     }
 
 }

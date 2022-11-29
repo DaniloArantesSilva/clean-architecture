@@ -41,7 +41,7 @@ public class CustomerController {
     private CustomerMapper customerMapper;
 
     @PostMapping
-    public ResponseEntity<String> insert(@Valid @RequestBody CustomerRequest customerRequest) {
+    public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest customerRequest) {
         var customer = customerMapper.toCustomer(customerRequest);
         insertCustomerUseCase.insert(customer, customerRequest.getZipCode());
         return ResponseEntity.ok().build();

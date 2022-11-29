@@ -10,9 +10,9 @@ public class FindCustomerByIdConfig {
 
     @Bean
     public FindCustomerByIdUseCaseImpl findCustomerByIdUseCase(
-            FindCustomerByIdImpl findCustomerByIdImpl
+            FindCustomerByIdImpl findCustomerById
     ) {
-        return new FindCustomerByIdUseCaseImpl(findCustomerByIdImpl);
+        return new FindCustomerByIdUseCaseImpl(findCustomerById);
     }
 
 }

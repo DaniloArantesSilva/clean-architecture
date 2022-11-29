@@ -8,20 +8,20 @@ import com.arantes.cleanarch.core.usecase.UpdateCustomerUseCase;
 
 public class UpdateCustomerUseCaseImpl implements UpdateCustomerUseCase {
 
-    private final UpdateCustomer updateCustomer;
-
     private final FindCustomerByIdUseCase findCustomerByIdUseCase;
 
     private final FindAddressByZipCode findAddressByZipCode;
 
+    private final UpdateCustomer updateCustomer;
+
     public UpdateCustomerUseCaseImpl(
-            UpdateCustomer updateCustomer,
             FindCustomerByIdUseCase findCustomerByIdUseCase,
-            FindAddressByZipCode findAddressByZipCode
+            FindAddressByZipCode findAddressByZipCode,
+            UpdateCustomer updateCustomer
     ) {
-        this.updateCustomer = updateCustomer;
         this.findCustomerByIdUseCase = findCustomerByIdUseCase;
         this.findAddressByZipCode = findAddressByZipCode;
+        this.updateCustomer = updateCustomer;
     }
 
     @Override

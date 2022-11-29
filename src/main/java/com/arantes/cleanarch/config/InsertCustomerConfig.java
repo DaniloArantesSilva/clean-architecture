@@ -12,11 +12,11 @@ public class InsertCustomerConfig {
 
     @Bean
     public InsertCustomerUseCaseImpl insertCustomerUseCase(
-            InsertCustomerImpl insertCustomerImpl,
-            FindAddressByZipCodeImpl findCustomerByIdAdapter,
-            SendCpfForValidationImpl sendCpfForValidationImpl
+            FindAddressByZipCodeImpl findAddressByZipCode,
+            InsertCustomerImpl insertCustomer,
+            SendCpfForValidationImpl sendCpfForValidation
     ) {
-        return new InsertCustomerUseCaseImpl(insertCustomerImpl, findCustomerByIdAdapter, sendCpfForValidationImpl);
+        return new InsertCustomerUseCaseImpl(findAddressByZipCode, insertCustomer, sendCpfForValidation);
     }
 
 }
